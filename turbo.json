@@ -1,0 +1,51 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalEnv": [
+    "OWNER_SKEY",
+    "NETWORK_ID",
+    "REDIS_URL",
+    "HYDRA_URL",
+    "PORT"
+  ],
+  "tasks": {
+    "start": {
+      "dependsOn": [
+        "^build:backend",
+        "^build:frontend"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "persistent": true
+    },
+    "build:frontend": {
+      "dependsOn": [
+        "^build:frontend"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "build:backend": {
+      "dependsOn": [
+        "^build:backend"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

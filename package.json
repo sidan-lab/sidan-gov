@@ -1,0 +1,52 @@
+{
+  "name": "@sidan-lab/sidan-gov",
+  "version": "1.0.0",
+  "description": "A template for Aiken development by MeshJS",
+  "main": "mesh/index.ts",
+  "scripts": {
+    "build:frontend": "turbo build:frontend",
+    "build:backend": "turbo build:backend",
+    "dev": "turbo dev",
+    "start:grpc": "turbo start:grpc",
+    "clean": "turbo run clean && rm -rf .turbo && rm -rf dist && rm -rf node_modules && rm package-lock.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeshJS/mesh-aiken-template.git"
+  },
+  "keywords": [
+    "Mesh"
+  ],
+  "author": "Mesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MeshJS/mesh-aiken-template/issues"
+  },
+  "homepage": "https://github.com/MeshJS/mesh-aiken-template#readme",
+  "dependencies": {
+    "@meshsdk/core": "^1.7.18",
+    "@meshsdk/core-csl": "^1.7.18",
+    "@types/lodash": "^4.17.13",
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5",
+    "redis": "^4.7.0",
+    "uuid": "^10.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.5.13",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "turbo": "^2.0.14",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.7.0",
+  "workspaces": [
+    "backend/*"
+  ]
+}

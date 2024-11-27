@@ -1,0 +1,41 @@
+{
+  "name": "@sidan-lab/sidan-gov-api",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "description": "",
+  "scripts": {
+    "build:backend": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "run:index": "ts-node-esm mesh/index.ts",
+    "clean": "rm -rf .turbo && rm -rf dist && rm -rf node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidan-lab/sidan-gov"
+  },
+  "author": "sidan-lab",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/sidan-lab/sidan-gov",
+  "dependencies": {
+    "@meshsdk/core": "^1.7.18",
+    "@meshsdk/core-csl": "^1.7.18",
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5",
+    "redis": "^4.7.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0",
+    "@types/node": "^20.4.2",
+    "ts-node": "^10.9.2",
+    "turbo": "^2.0.14",
+    "tsup": "^8.0.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "backend/*"
+  ]
+}
