@@ -39,7 +39,7 @@
     "@types/ws": "^8.5.13",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
-    "turbo": "^2.0.14",
+    "turbo": "^2.3.3",
     "typescript": "^5.6.3"
   },
   "engines": {
@@ -47,6 +47,7 @@
   },
   "packageManager": "npm@10.7.0",
   "workspaces": [
-    "backend/*"
+    "backend/*",
+    "frontend/*"
   ]
 }
