@@ -6,6 +6,7 @@
   "scripts": {
     "build:backend": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "start": "tsx --env-file=.env ./src/index.ts",
     "run:index": "ts-node-esm mesh/index.ts",
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf node_modules"
   },
@@ -17,19 +18,21 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/sidan-lab/sidan-gov",
   "dependencies": {
-    "@meshsdk/core": "^1.7.18",
-    "@meshsdk/core-csl": "^1.7.18",
+    "@meshsdk/common": "^1.7.31",
+    "@sapphire/framework": "^5.3.1",
     "axios": "^1.7.5",
+    "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
     "redis": "^4.7.0",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@types/uuid": "^10.0.0",
     "@types/node": "^20.4.2",
+    "@types/uuid": "^10.0.0",
     "ts-node": "^10.9.2",
-    "turbo": "^2.0.14",
     "tsup": "^8.0.2",
+    "tsx": "^4.19.2",
+    "turbo": "^2.0.14",
     "typescript": "^5.6.3"
   },
   "engines": {
