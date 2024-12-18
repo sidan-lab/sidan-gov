@@ -5,14 +5,14 @@ import {
   ButtonStyle,
   SlashCommandBuilder,
 } from "discord.js";
-import { Command } from "@sapphire/framework";
+import { ApplicationCommandRegistry, Command } from "@sapphire/framework";
 import { BlockfrostProvider } from "@meshsdk/core";
 import { GovernanceProposal } from "../../types/cardano";
-import { isMessageInstance } from "@sapphire/discord.js-utilities";
 
 const blockfrostApiKey = process.env.BLOCKFROST_KEY!;
 const blockchainProvider = new BlockfrostProvider(blockfrostApiKey);
 
+//TODO: To be replaced by scheduler
 class ProposalsCommand extends Command {
   constructor(context, options) {
     super(context, {
@@ -21,6 +21,14 @@ class ProposalsCommand extends Command {
       aliases: ["proposals"],
       description: "proposals",
     });
+  }
+
+  registerApplicationCommands(registry: ApplicationCommandRegistry) {
+    registry.registerChatInputCommand((builder) =>
+      builder
+        .setName("proposals")
+        .setDescription("List all proposals on Cardano blockchain")
+    );
   }
 
   async messageRun(message) {
